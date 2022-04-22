@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+header{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+nav{
+    border: solid black 2px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+nav>button{
+    background-color: rgb(82, 183, 144);
+    /* padding: 50px; */
+    width: 200px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+main{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+main.home img{
+    width: 300px;
+}
+
+main.home>p{
+    max-width: 800px;
+}
+
+main.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+main.menu .pizza {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* width: 80%; */
+}
+
+main.menu img {
+    width: 200px;
+}
+
+main.menu p{
+    max-width: 400px;
+    align-self: center;
+}
+
+main.contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+main.contact .numbers,
+main.contact .mail{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
