@@ -5,12 +5,25 @@ import homeContent from "./home"
 
 generateHomePage()
 
-const menuButton = document.querySelector('.menu')
-const homeButton = document.querySelector('.home')
-const contactButton = document.querySelector('.contact')
-menuButton.addEventListener('click', menuContent)
-homeButton.addEventListener('click', homeContent)
-contactButton.addEventListener('click', contactContent)
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click',manageContent))
 
+function manageContent(e){
+    const mainDiv = document.querySelector('main');
 
-// zwracam z naszych 3 funkcji tylko html i podmieniewmy go w tym miejscu
+    let currentClass = e.currentTarget.classList.value;
+    let currentHtml
+
+    mainDiv.classList.remove(...mainDiv.classList);   
+    mainDiv.classList.add(currentClass)
+
+    if(mainDiv.classList.contains('contact')){
+        currentHtml = contactContent()
+    } else if (mainDiv.classList.contains('menu')){
+        currentHtml = menuContent()
+    } else if (mainDiv.classList.contains('home')){
+        currentHtml = homeContent()
+    }
+
+    mainDiv.innerHTML = currentHtml
+}
